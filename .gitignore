@@ -1,0 +1,10 @@
+.env
+theatre-details.json
+node_modules
+dist
+.wrangler/
+.claude/
+*.log
+.DS_Store
+public/imax-venues.json
+imax-venues.json
