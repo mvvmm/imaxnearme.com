@@ -206,7 +206,7 @@ if skipped:
 
 output = {
     'source': 'https://imax.fandom.com/wiki/List_of_IMAX_venues',
-    'fetched_at': __import__('datetime').datetime.utcnow().isoformat() + 'Z',
+    'fetched_at': __import__('datetime').datetime.now(__import__('datetime').timezone.utc).isoformat(),
     'venue_count': len(venues),
     'venues': venues,
 }
