@@ -8,3 +8,4 @@ dist
 .DS_Store
 public/imax-venues.json
 imax-venues.json
+.ignore/
