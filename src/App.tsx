@@ -4,23 +4,29 @@ import { Filters } from "./components/Filters";
 import { InfoPanel } from "./components/InfoPanel";
 import { VenueDrawer } from "./components/VenueDrawer";
 import { useGeolocation } from "./hooks/useGeolocation";
-import type { Venue, VenueData, Filters as FiltersType, FilterKey } from "./types";
+import type {
+  Venue,
+  VenueData,
+  Filters as FiltersType,
+  FilterKey,
+} from "./types";
 import "leaflet/dist/leaflet.css";
 import "./App.css";
 
 function isDome(venue: Venue): boolean {
-  return venue.digital_projector.toLowerCase().includes("dome")
-    || venue.film_projector.toLowerCase().includes("dome")
-    || venue.name.toLowerCase().includes("dome")
-    || venue.name.toLowerCase().includes("omni");
+  return (
+    venue.digital_projector.toLowerCase().includes("dome") ||
+    venue.film_projector.toLowerCase().includes("dome") ||
+    venue.name.toLowerCase().includes("dome") ||
+    venue.name.toLowerCase().includes("omni")
+  );
 }
 
 function matchesFilters(venue: Venue, filters: FiltersType): boolean {
   const dp = venue.digital_projector;
   const isGT = dp.includes("GT Laser");
   const isLaser =
-    !isGT &&
-    (dp.includes("Laser XT") || dp.toLowerCase().includes("cola"));
+    !isGT && (dp.includes("Laser XT") || dp.toLowerCase().includes("cola"));
   const isFilm = !!venue.film_projector;
   const isVenueDome = isDome(venue);
   // A venue is shown if it matches ANY active filter
@@ -73,7 +79,10 @@ export default function App() {
       .then((data: VenueData) => setVenues(offsetOverlapping(data.venues)));
   }, []);
 
-  const filtered = useMemo(() => venues.filter((v) => matchesFilters(v, filters)), [venues, filters]);
+  const filtered = useMemo(
+    () => venues.filter((v) => matchesFilters(v, filters)),
+    [venues, filters]
+  );
 
   const toggle = (key: FilterKey) => {
     setFilters((f) => ({ ...f, [key]: !f[key] }));
@@ -105,6 +114,14 @@ export default function App() {
         userLocation={geo.located ? { lat: geo.lat, lng: geo.lng } : null}
         onClose={() => setSelectedVenue(null)}
       />
+      <a
+        href="https://github.com/mvvmm/imax-near-me"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="source-link"
+      >
+        Source
+      </a>
     </>
   );
 }

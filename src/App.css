@@ -458,6 +458,22 @@ html {
   color: rgba(255, 255, 255, 0.45) !important;
 }
 
+/* ── Source link ── */
+.source-link {
+  position: fixed;
+  bottom: 6px;
+  left: 8px;
+  z-index: 1000;
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 11px;
+  font-family: "Inter", sans-serif;
+  text-decoration: none;
+}
+
+.source-link:hover {
+  color: rgba(255, 255, 255, 0.6);
+}
+
 /* ── Info panel ── */
 .info-panel {
   pointer-events: auto;
@@ -778,5 +794,13 @@ html {
     right: auto !important;
     bottom: auto !important;
     border-radius: 0 0 4px 0 !important;
+  }
+
+  .source-link {
+    top: 0;
+    right: 8px;
+    bottom: auto;
+    left: auto;
+    line-height: 20px;
   }
 }

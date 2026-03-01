@@ -1,4 +1,4 @@
-# [imaxnearme.com](https://imaxnearme.com)
+# [IMAX near me](https://imaxnearme.com)
 
 ![IMAX Near Me](public/IMAX-near-me-preview.png)
 
@@ -26,15 +26,15 @@ cp imax-venues.json public/imax-venues.json
 
 ## Scripts
 
-| Command | Description |
-|---|---|
-| `npm run dev` | Start local dev server |
-| `npm run build` | TypeScript check + production build |
-| `npm run deploy` | Build and deploy to Cloudflare |
-| `npm run fetch-venues` | Fetch venue data from wiki + Google Places |
-| `npm run upload-venues` | Upload venue data to R2 |
-| `npm run upload-cache` | Upload Google Places cache to R2 |
-| `npm run download-cache` | Download Google Places cache from R2 |
+| Command                  | Description                                |
+| ------------------------ | ------------------------------------------ |
+| `npm run dev`            | Start local dev server                     |
+| `npm run build`          | TypeScript check + production build        |
+| `npm run deploy`         | Build and deploy to Cloudflare             |
+| `npm run fetch-venues`   | Fetch venue data from wiki + Google Places |
+| `npm run upload-venues`  | Upload venue data to R2                    |
+| `npm run upload-cache`   | Upload Google Places cache to R2           |
+| `npm run download-cache` | Download Google Places cache from R2       |
 
 ## Stack
 
