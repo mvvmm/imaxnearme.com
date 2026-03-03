@@ -306,6 +306,7 @@ export function Map({
       keyboard={true}
       touchPitch={true}
       touchZoomRotate={true}
+      bearingSnap={0}
       minZoom={2}
       onLoad={onLoad}
     >
